@@ -1,0 +1,534 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+p {
+  line-height: 1.6rem;
+}
+
+/* general styling or global styling */
+:root {
+  --primary1: #47d8de;
+  --primary2: #19ced6;
+  --secondary1: #181818;
+  --secondary2: #343434;
+  --body_padding: 15px 12% 15px 12%;
+  --custom1: white;
+  --border_radius: 6px;
+  --section_margin: 80px 0px;
+  --light_primary: #d1f5f7;
+  --section_padding: 80px 0px;
+  --footerBg: #203646;
+}
+h2 {
+  position: relative;
+  font-size: 36px;
+}
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.left_h2::after {
+  content: url("src/divider.png");
+  display: flex;
+  margin-top: 10px;
+  transform: scale(0.7);
+  -webkit-transform-origin-x: 0;
+}
+.center_h2::after {
+  content: url("src/divider2.png");
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  transform: scale(0.8);
+}
+
+/* Element or site styling */
+
+.branded_header {
+  padding: var(--body_padding);
+  box-shadow: 0px 2px 2px #d2d2d2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact_detail,
+.contact_detail > div {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.contact_detail > div > i {
+  background-color: var(--primary2);
+  padding: 10px;
+  color: var(--custom1);
+  border-radius: var(--border_radius);
+  font-size: 25px;
+}
+.main_header {
+  padding: var(--body_padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main_header > ul {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+}
+.main_header ul li a {
+  text-decoration: none;
+  color: black;
+}
+.main_header ul li a:hover {
+  color: var(--primary2);
+}
+.main_header ul li .active {
+  color: var(--primary2);
+  font-weight: bold;
+}
+.main_header .button button {
+  background-color: var(--primary2);
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.main_header .button button:hover {
+  background-color: var(--primary1);
+}
+/* dropdown css */
+
+.main_header ul .dropdown ul {
+  display: none;
+  list-style-type: none;
+  flex-direction: column;
+  padding: 0px 10px;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-bottom: 3.5px solid var(--primary2);
+}
+#dropdown1::after {
+  content: "";
+}
+#dropdown1:hover .dropdown1 {
+  display: block;
+}
+#dropdown1:hover #drop_arrow1 {
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+#dropdown2:hover .dropdown2 {
+  display: block;
+}
+#dropdown2:hover #drop_arrow2 {
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+.main_header ul .dropdown ul li {
+  cursor: pointer;
+  margin: 20px 0px;
+}
+.main_header ul .dropdown ul li:hover a {
+  color: var(--primary2);
+}
+/* dropdown arrow styling */
+#drop_arrow1,
+#drop_arrow2 {
+  border: solid black;
+  border-width: 0px 3px 3px 0px;
+  display: inline-block;
+  padding: 2px;
+  margin-left: 5px;
+  transform: rotate(225deg);
+  transition: 0.3s;
+}
+
+/* Hero section styling start */
+
+.hero_section {
+  padding: var(--body_padding);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  transition: 0.6s linear;
+}
+.spot_text {
+  padding-right: 300px;
+}
+.spot_text h1,
+.spot_text p {
+  margin-bottom: 20px;
+  color: white;
+}
+.spot_text h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.spot_text p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6rem;
+}
+.spot_btn1 {
+  background-color: var(--primary2);
+  padding: 15px 20px;
+  border: 1.5px solid var(--primary2);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+.spot_btn1:hover {
+  border: 1.5px solid white;
+  background-color: transparent;
+}
+.spot_btn2 {
+  background-color: transparent;
+  padding: 15px 20px;
+  border: 1.5px solid white;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+}
+.spot_btn2:hover {
+  border: 1.5px solid var(--primary2);
+  background-color: var(--primary2);
+}
+
+/* slider button next prev styling */
+
+.slider_btn div {
+  font-size: 25px;
+  background-color: var(--primary1);
+  color: var(--custom1);
+  padding: 10px;
+  width: auto;
+  cursor: pointer;
+}
+.slider_btn #prev {
+  position: absolute;
+  top: 70%;
+  left: 1%;
+  transform: translateY(-70%);
+}
+
+.slider_btn #next {
+  position: absolute;
+  top: 70%;
+  right: 1%;
+  transform: translateY(-70%);
+}
+
+/* slider pagination styling */
+.slider_pagination {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slider_pagination span.active {
+  background-color: var(--primary2);
+}
+.slider_pagination span {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--primary2);
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Hero pods section styling.... */
+
+.hero_pods {
+  padding: var(--body_padding);
+  display: flex;
+  margin-top: -120px;
+}
+.hero_pods div {
+  text-align: center;
+  padding: 50px 20px;
+  width: 100%;
+  color: white;
+}
+.hero_pods div i {
+  font-size: 40px;
+  color: white;
+}
+.hero_pods div h3 {
+  margin: 20px 0px 20px 0px;
+  font-size: 24px;
+}
+
+.hero_pods div:nth-child(1) {
+  background-color: var(--primary1);
+}
+.hero_pods div:nth-child(2) {
+  background-color: var(--primary2);
+}
+.hero_pods div:nth-child(3) {
+  background-color: var(--primary1);
+}
+
+/*  intro section styling */
+.intro_text {
+  padding: var(--body_padding);
+  display: flex;
+  margin: var(--section_margin);
+}
+.intro_text .col {
+  background: url("src/image_001.jpg") no-repeat center;
+  width: 100%;
+}
+.intro_text div h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+.intro_text .intro_content {
+  padding-left: 40px;
+  width: 100%;
+}
+.intro_text .intro_content p > i {
+  color: var(--primary1);
+}
+.intro_btn1 {
+  background-color: var(--primary1);
+  padding: 15px 20px;
+  border: 1.5px solid var(--primary1);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 40px;
+}
+.intro_btn1:hover {
+  border: 1.5px solid white;
+  background-color: var(--primary2);
+}
+.intro_btn2 {
+  background-color: transparent;
+  padding: 15px 20px;
+  border: 1.5px solid var(--primary2);
+  color: var(--primary1);
+  cursor: pointer;
+  font-size: 17px;
+  margin-top: 40px;
+}
+.intro_btn2:hover {
+  border: 1.5px solid var(--primary2);
+  background-color: var(--primary2);
+  color: var(--custom1);
+}
+
+/* Our Department */
+
+.our_department {
+  background-color: var(--light_primary);
+  padding: var(--body_padding);
+  text-align: center;
+}
+.our_department > div {
+  padding: var(--section_padding);
+}
+
+.our_department .department p {
+  padding: 0 270px;
+  margin-bottom: 40px;
+}
+.department_pods {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+.department_pods div {
+  text-align: center;
+  padding: 50px 20px;
+  width: 100%;
+  color: white;
+}
+.department_pods div i {
+  font-size: 40px;
+  color: white;
+}
+.department_pods div h3 {
+  margin: 20px 0px 20px 0px;
+  font-size: 24px;
+}
+.department_pods div:nth-child(1) {
+  background-color: var(--primary1);
+}
+.department_pods div:nth-child(2) {
+  background-color: var(--primary2);
+}
+.department_pods div:nth-child(3) {
+  background-color: var(--primary1);
+}
+.custom_btn {
+  background-color: var(--secondary1);
+  padding: 15px 20px;
+  color: var(--custom1);
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  margin-top: 40px;
+}
+.custom_btn:hover {
+  background-color: var(--primary2);
+}
+
+/* Why choose us section styling... */
+.whyChooseUs {
+  display: flex;
+  width: 100%;
+}
+.whyChooseBg {
+  background: url("src/image_002.jpg") no-repeat center;
+  width: 100%;
+  background-size: cover;
+}
+.whyChooseContent {
+  width: 100%;
+  margin: var(--section_margin);
+  padding: 0px 50px;
+  margin-bottom: 0;
+}
+.floatingDiv {
+  background-color: var(--primary2);
+  padding: 50px;
+  display: flex;
+  margin-top: 40px;
+  margin-left: -150px;
+  color: white;
+  box-shadow: 5px 5px 10px rgb(99, 99, 99);
+}
+
+.floatingDiv div div {
+  padding-right: 40px;
+}
+
+.floatingDiv div div h4 {
+  background-color: white;
+  font-size: 30px;
+  display: inline-block;
+  padding: 15px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  color: var(--primary2);
+}
+.floatingDiv div div h2 {
+  margin-bottom: 20px;
+}
+/* Our Doctors section start */
+
+.our_doctors {
+  padding: var(--section_padding);
+  text-align: center;
+}
+.doctors p {
+  padding: 0px 400px;
+}
+.our_doctors .doctors_pods {
+  margin-top: 40px;
+  display: flex;
+  gap: 10px;
+  padding: var(--body_padding);
+}
+.our_doctors .doctors_pods .dr_pod > div {
+  box-shadow: 0px 5px 10px #757575;
+  padding-bottom: 10px;
+}
+.our_doctors .doctors_pods .dr_pod > i {
+  font-size: 24px;
+  background-color: var(--primary2);
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.our_doctors .doctors_pods .dr_pod img {
+  width: 100%;
+}
+.our_doctors .doctors_pods .dr_pod .dr_desc {
+  background-color: var(--primary2);
+  padding: 20px 10px;
+  margin-bottom: 10px;
+}
+.dr_btn {
+  background-color: var(--primary2);
+}
+.dr_btn:hover {
+  background-color: var(--secondary1);
+}
+
+/* Footer styling start */
+footer {
+  padding: var(--section_padding);
+  background-color: var(--footerBg);
+  color: white;
+  font-size: 17px;
+}
+.footer h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.footer_logo img {
+  margin-bottom: 20px;
+}
+.footer_logo p {
+  margin-bottom: 20px;
+}
+.footer {
+  padding: var(--body_padding);
+  display: flex;
+  justify-content: space-between;
+}
+.footer_department ul li,
+.footer_links ul li,
+.footer_hour ul li {
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+.footer_hour .opening_hour {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.branded_footer {
+  padding: var(--body_padding);
+  border-top: 1px solid grey;
+  background-color: var(--footerBg);
+  color: var(--custom1);
+}
+.branded_content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.branded_content ul {
+  display: flex;
+  gap: 40px;
+  list-style-type: none;
+}
+.branded_content ul li a {
+  color: white;
+  text-decoration: none;
+}
+.branded_content ul div i {
+  margin: 0 5px;
+  cursor: pointer;
+}
